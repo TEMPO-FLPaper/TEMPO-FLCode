@@ -1,0 +1,322 @@
+{
+  "schema_version": 1,
+  "method": "tempo",
+  "preset": "Verification (reduced)",
+  "protocol_label": "verification",
+  "reference_notebook": "TEMPO_FL_V12_2_MemorySafe_Detailed_OwnedClass_HFL_TrashNet.ipynb",
+  "reference_sha256": "f5023edaa7e9e1ad719108055c2739089e541fe4a72e2254b34463dccfcc1f5e",
+  "settings": {
+    "experiment_version": "V12.2",
+    "seed": 42,
+    "project_root": "",
+    "auto_resume": true,
+    "dataset_name": "TrashNet",
+    "dataset_mode": "trashnet_resized",
+    "custom_dataset_dir": "",
+    "trashnet_zip_url": "https://huggingface.co/datasets/garythung/trashnet/resolve/main/dataset-resized.zip",
+    "image_extensions": [
+      ".jpg",
+      ".jpeg",
+      ".png",
+      ".bmp",
+      ".webp"
+    ],
+    "train_initial_ratio": 0.6,
+    "validation_ratio": 0.1,
+    "online_ratio": 0.15,
+    "test_ratio": 0.15,
+    "generic_train_per_class": 4,
+    "generic_validation_per_class": 2,
+    "generic_internal_test_per_class": 2,
+    "calibration_fraction_of_validation": 0.5,
+    "num_clients": 8,
+    "num_contexts": 4,
+    "clients_per_context": 2,
+    "context_names": [
+      "Education",
+      "Cafeteria",
+      "Laboratory",
+      "Dormitory"
+    ],
+    "planned_classes": {
+      "C00": [
+        "paper",
+        "cardboard"
+      ],
+      "C01": [
+        "paper",
+        "plastic"
+      ],
+      "C02": [
+        "plastic",
+        "glass"
+      ],
+      "C03": [
+        "plastic",
+        "metal"
+      ],
+      "C04": [
+        "glass",
+        "metal"
+      ],
+      "C05": [
+        "glass",
+        "cardboard"
+      ],
+      "C06": [
+        "paper",
+        "trash"
+      ],
+      "C07": [
+        "plastic",
+        "trash"
+      ]
+    },
+    "planned_class_assignment_weight": 10.0,
+    "background_class_assignment_weight": 0.5,
+    "min_owned_samples_per_split_when_possible": 1,
+    "min_client_train_samples": 0,
+    "image_size": 32,
+    "mobilenet_alpha": 0.35,
+    "dropout": 0.25,
+    "trainable_tail_layers": 40,
+    "generic_head_epochs": 1,
+    "generic_finetune_epochs": 1,
+    "generic_batch_size": 8,
+    "generic_lr_head": 0.001,
+    "generic_lr_finetune": 8e-05,
+    "early_stopping_patience": 4,
+    "reduce_lr_patience": 2,
+    "reduce_lr_factor": 0.5,
+    "generic_use_class_weights": true,
+    "generic_class_weight_min": 0.6,
+    "generic_class_weight_max": 1.8,
+    "specialization_search_mode": "single_model_adaptive_lr",
+    "specialization_initial_lr": 0.0001,
+    "specialization_min_lr": 2.5e-05,
+    "specialization_lr_reduce_factor": 0.5,
+    "specialization_lr_patience": 2,
+    "specialization_early_stop_patience": 3,
+    "specialization_min_epochs": 1,
+    "specialization_max_epochs": 1,
+    "specialization_min_score_delta": 0.002,
+    "specialization_stop_when_target_met": true,
+    "specialization_batch_size": 8,
+    "specialization_background_fraction": 0.15,
+    "specialization_owned_macro_recall_weight": 0.6,
+    "specialization_owned_accuracy_weight": 0.3,
+    "specialization_all_local_f1_weight": 0.1,
+    "specialization_min_owned_score_gain": 0.0,
+    "specialization_max_owned_min_recall_drop": 0.05,
+    "specialization_target_owned_accuracy": 0.75,
+    "specialization_target_owned_macro_recall": 0.7,
+    "specialization_show_details": true,
+    "specialization_print_per_epoch": true,
+    "specialization_print_per_class_each_epoch": true,
+    "tf_data_num_parallel_calls": 2,
+    "tf_data_prefetch_batches": 1,
+    "tf_data_private_threadpool_size": 2,
+    "bootstrap_use_owned_quality_weights": true,
+    "bootstrap_quality_floor": 0.1,
+    "bootstrap_l3_context_quality_power": 1.0,
+    "num_rounds": 2,
+    "l2_shadow_lr": 0.0001,
+    "l2_shadow_batch_size": 8,
+    "l2_local_steps_per_round": 1,
+    "l2_prox_mu": 0.0001,
+    "gradient_clip_norm": 5.0,
+    "l2_class_balanced_batches": true,
+    "l2_blend_candidates": [
+      0.1,
+      0.2,
+      0.35,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "l3_blend_candidates": [
+      0.1,
+      0.2,
+      0.35,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "topdown_l3_to_l2_candidates": [
+      0.05,
+      0.1,
+      0.15,
+      0.2,
+      0.3
+    ],
+    "gate_score_f1_weight": 0.35,
+    "gate_score_accuracy_weight": 0.15,
+    "gate_score_balanced_accuracy_weight": 0.15,
+    "gate_score_nll_quality_weight": 0.25,
+    "gate_score_calibration_weight": 0.1,
+    "l2_exploration_score_drop": 0.003,
+    "l3_exploration_score_drop": 0.0025,
+    "l2_hard_score_drop": 0.008,
+    "l3_hard_score_drop": 0.006,
+    "l2_min_improvement": 0.00025,
+    "l3_min_improvement": 0.00025,
+    "trust_region_preferred_exploration_alpha": 0.2,
+    "l2_rollback_score_drop": 0.008,
+    "l3_rollback_score_drop": 0.006,
+    "gate_base_supported_class_recall_drop": 0.08,
+    "gate_max_adaptive_class_recall_drop": 0.3,
+    "gate_max_ece_increase": 0.05,
+    "l3_context_quality_power": 1.25,
+    "events_per_client_per_round": 2,
+    "evaluation_samples_per_client": 4,
+    "evaluation_every": 5,
+    "threshold_grid_min": 0.35,
+    "threshold_grid_max": 0.92,
+    "threshold_grid_step": 0.01,
+    "target_selective_accuracy": 0.78,
+    "target_selective_lower_bound": 0.65,
+    "min_accept_coverage": 0.6,
+    "l1_threshold_clip_min": 0.4,
+    "l2_threshold_clip_min": 0.42,
+    "l3_threshold_clip_min": 0.42,
+    "threshold_clip_max": 0.88,
+    "reliability_bin_edges": [
+      0.0,
+      0.45,
+      0.55,
+      0.65,
+      0.75,
+      0.85,
+      0.92,
+      1.01
+    ],
+    "reliability_prior_strength": 8.0,
+    "teacher_confidence_margin": 0.06,
+    "teacher_threshold_min": 0.65,
+    "teacher_threshold_max": 0.92,
+    "commissioning_rounds": 20,
+    "persistent_profile_refresh_round": 40,
+    "shift_target_pool_size": 60,
+    "shift_source_eval_fraction": 0.3,
+    "shift_min_stream_pool_size": 6,
+    "shift_min_eval_pool_size": 3,
+    "shift_max_fraction_per_class": 0.5,
+    "shift_transform_names": [
+      "brightness_down",
+      "brightness_up",
+      "contrast_down",
+      "gaussian_blur",
+      "jpeg_degrade",
+      "zoom_crop"
+    ],
+    "temporary_shift_hard_fraction": 0.65,
+    "persistent_shift_hard_fraction": 0.8,
+    "new_normal_hard_fraction": 0.75,
+    "absolute_reliance_floor": 0.3,
+    "reliance_increase_over_baseline": 0.15,
+    "persistence_rounds": 3,
+    "higher_resolution_threshold": 0.7,
+    "promotion_min_escalated_events_window": 8,
+    "min_teacher_samples_for_promotion": 8,
+    "max_teacher_buffer": 160,
+    "teacher_memory_rounds": 6,
+    "promotion_replay_samples": 64,
+    "promotion_epochs": 2,
+    "promotion_lr": 4e-05,
+    "promotion_kd_lambda": 0.65,
+    "promotion_kd_temperature": 2.0,
+    "promotion_max_local_f1_drop": 0.005,
+    "promotion_max_local_accuracy_drop": 0.005,
+    "promotion_max_owned_accuracy_drop": 0.01,
+    "promotion_max_owned_macro_recall_drop": 0.02,
+    "promotion_max_owned_min_recall_drop": 0.05,
+    "promotion_base_supported_class_recall_drop": 0.1,
+    "promotion_max_adaptive_class_recall_drop": 0.3,
+    "promotion_min_teacher_kl_improvement": 0.005,
+    "promotion_min_acceptance_gain": 0.06,
+    "promotion_accept_cooldown_rounds": 8,
+    "promotion_reject_cooldown_rounds": 3,
+    "promotion_rebaseline_rounds": 3,
+    "count_l2_to_l3_communication": true,
+    "count_l3_to_l2_communication": true,
+    "export_tflite_at_end": false,
+    "prefer_full_int8_tflite": true,
+    "tflite_representative_samples": 128
+  },
+  "output_root": "runs/verification",
+  "dataset_cache": "datasets",
+  "departures": {
+    "generic_train_per_class": {
+      "reference": 20,
+      "selected": 4
+    },
+    "generic_validation_per_class": {
+      "reference": 6,
+      "selected": 2
+    },
+    "generic_internal_test_per_class": {
+      "reference": 6,
+      "selected": 2
+    },
+    "min_client_train_samples": {
+      "reference": 60,
+      "selected": 0
+    },
+    "image_size": {
+      "reference": 128,
+      "selected": 32
+    },
+    "mobilenet_alpha": {
+      "reference": 0.75,
+      "selected": 0.35
+    },
+    "generic_head_epochs": {
+      "reference": 6,
+      "selected": 1
+    },
+    "generic_finetune_epochs": {
+      "reference": 10,
+      "selected": 1
+    },
+    "generic_batch_size": {
+      "reference": 24,
+      "selected": 8
+    },
+    "specialization_min_epochs": {
+      "reference": 3,
+      "selected": 1
+    },
+    "specialization_max_epochs": {
+      "reference": 8,
+      "selected": 1
+    },
+    "specialization_batch_size": {
+      "reference": 24,
+      "selected": 8
+    },
+    "num_rounds": {
+      "reference": 100,
+      "selected": 2
+    },
+    "l2_shadow_batch_size": {
+      "reference": 24,
+      "selected": 8
+    },
+    "l2_local_steps_per_round": {
+      "reference": 4,
+      "selected": 1
+    },
+    "events_per_client_per_round": {
+      "reference": 8,
+      "selected": 2
+    },
+    "evaluation_samples_per_client": {
+      "reference": 40,
+      "selected": 4
+    },
+    "export_tflite_at_end": {
+      "reference": true,
+      "selected": false
+    }
+  }
+}

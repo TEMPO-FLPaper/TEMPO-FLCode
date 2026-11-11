@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "method": "hfl",
+  "preset": "Reference",
+  "reference_notebook": "TEMPO_FL_V12_2_FedAvg_Baseline_TrashNet_FIXED.ipynb",
+  "settings": {
+    "experiment_version": "V12.2-FedAvg",
+    "seed": 42,
+    "project_root": "",
+    "auto_resume": true,
+    "dataset_name": "TrashNet",
+    "dataset_mode": "trashnet_resized",
+    "custom_dataset_dir": "",
+    "trashnet_zip_url": "https://huggingface.co/datasets/garythung/trashnet/resolve/main/dataset-resized.zip",
+    "image_extensions": [
+      ".jpg",
+      ".jpeg",
+      ".png",
+      ".bmp",
+      ".webp"
+    ],
+    "train_initial_ratio": 0.6,
+    "validation_ratio": 0.1,
+    "online_ratio": 0.15,
+    "test_ratio": 0.15,
+    "generic_train_per_class": 20,
+    "generic_validation_per_class": 6,
+    "generic_internal_test_per_class": 6,
+    "calibration_fraction_of_validation": 0.5,
+    "num_clients": 8,
+    "num_contexts": 4,
+    "clients_per_context": 2,
+    "context_names": [
+      "Education",
+      "Cafeteria",
+      "Laboratory",
+      "Dormitory"
+    ],
+    "planned_classes": {
+      "C00": [
+        "paper",
+        "cardboard"
+      ],
+      "C01": [
+        "paper",
+        "plastic"
+      ],
+      "C02": [
+        "plastic",
+        "glass"
+      ],
+      "C03": [
+        "plastic",
+        "metal"
+      ],
+      "C04": [
+        "glass",
+        "metal"
+      ],
+      "C05": [
+        "glass",
+        "cardboard"
+      ],
+      "C06": [
+        "paper",
+        "trash"
+      ],
+      "C07": [
+        "plastic",
+        "trash"
+      ]
+    },
+    "planned_class_assignment_weight": 10.0,
+    "background_class_assignment_weight": 0.5,
+    "min_owned_samples_per_split_when_possible": 1,
+    "min_client_train_samples": 60,
+    "image_size": 128,
+    "tf_data_num_parallel_calls": 2,
+    "tf_data_prefetch_batches": 1,
+    "tf_data_private_threadpool_size": 2,
+    "mobilenet_alpha": 0.75,
+    "dropout": 0.25,
+    "trainable_tail_layers": 40,
+    "generic_head_epochs": 6,
+    "generic_finetune_epochs": 10,
+    "generic_batch_size": 24,
+    "generic_lr_head": 0.001,
+    "generic_lr_finetune": 8e-05,
+    "early_stopping_patience": 4,
+    "reduce_lr_patience": 2,
+    "reduce_lr_factor": 0.5,
+    "generic_use_class_weights": true,
+    "generic_class_weight_min": 0.6,
+    "generic_class_weight_max": 1.8,
+    "fedavg_local_lr": 0.0001,
+    "fedavg_local_batch_size": 24,
+    "fedavg_local_steps_per_round": 4,
+    "gradient_clip_norm": 5.0,
+    "fedavg_class_balanced_batches": true,
+    "num_rounds": 100,
+    "evaluation_every": 5,
+    "events_per_client_per_round": 8,
+    "evaluation_samples_per_client": 40,
+    "export_tflite_at_end": true,
+    "prefer_full_int8_tflite": true,
+    "tflite_representative_samples": 128
+  }
+}

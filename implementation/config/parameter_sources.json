@@ -1,0 +1,527 @@
+{
+  "image_extensions": [
+    "implementation/shared/data/catalog.py:scan_classification_folder"
+  ],
+  "generic_train_per_class": [
+    "implementation/shared/data/partitions.py:build_balanced_generic_sets"
+  ],
+  "generic_validation_per_class": [
+    "implementation/shared/data/partitions.py:build_balanced_generic_sets"
+  ],
+  "generic_internal_test_per_class": [
+    "implementation/shared/data/partitions.py:build_balanced_generic_sets"
+  ],
+  "planned_class_assignment_weight": [
+    "implementation/shared/data/partitions.py:client_class_assignment_weight"
+  ],
+  "background_class_assignment_weight": [
+    "implementation/shared/data/partitions.py:client_class_assignment_weight"
+  ],
+  "min_owned_samples_per_split_when_possible": [
+    "implementation/shared/data/partitions.py:allocate_class_indices_to_clients"
+  ],
+  "tf_data_private_threadpool_size": [
+    "implementation/shared/data/pipeline.py:make_tf_dataset"
+  ],
+  "seed": [
+    "implementation/shared/data/pipeline.py:make_tf_dataset",
+    "implementation/methods/tempo_fl/data/scenarios.py:split_shift_sources",
+    "implementation/methods/tempo_fl/data/scenarios.py:sample_scenario_batch",
+    "implementation/methods/ditto/reporting/dataset.py:report_dataset",
+    "implementation/methods/flat/reporting/dataset.py:report_dataset",
+    "implementation/methods/hfl/reporting/dataset.py:report_dataset",
+    "implementation/methods/tempo_fl/reporting/dataset.py:report_dataset",
+    "implementation/shared/training/local.py:select_deterministic_batch",
+    "implementation/shared/training/local.py:select_class_balanced_batch",
+    "implementation/methods/tempo_fl/training/promotion.py:maybe_promote_l1",
+    "implementation/shared/training/schedule.py:set_round_seed",
+    "implementation/methods/tempo_fl/training/specialize_clients.py:specialize_clients"
+  ],
+  "shift_transform_names": [
+    "implementation/methods/tempo_fl/data/scenarios.py:ensure_shift_transform_bank"
+  ],
+  "shift_max_fraction_per_class": [
+    "implementation/methods/tempo_fl/data/scenarios.py:select_source_unique_candidates"
+  ],
+  "shift_source_eval_fraction": [
+    "implementation/methods/tempo_fl/data/scenarios.py:split_shift_sources",
+    "implementation/methods/tempo_fl/data/scenarios.py:build_shift_profiles"
+  ],
+  "shift_target_pool_size": [
+    "implementation/methods/tempo_fl/data/scenarios.py:build_shift_profiles"
+  ],
+  "shift_min_eval_pool_size": [
+    "implementation/methods/tempo_fl/data/scenarios.py:build_shift_profiles"
+  ],
+  "shift_min_stream_pool_size": [
+    "implementation/methods/tempo_fl/data/scenarios.py:build_shift_profiles"
+  ],
+  "persistent_shift_hard_fraction": [
+    "implementation/methods/tempo_fl/data/scenarios.py:build_shift_profiles",
+    "implementation/methods/tempo_fl/data/scenarios.py:hard_fraction_for_scenario"
+  ],
+  "temporary_shift_hard_fraction": [
+    "implementation/methods/tempo_fl/data/scenarios.py:hard_fraction_for_scenario"
+  ],
+  "new_normal_hard_fraction": [
+    "implementation/methods/tempo_fl/data/scenarios.py:hard_fraction_for_scenario"
+  ],
+  "events_per_client_per_round": [
+    "implementation/methods/tempo_fl/data/scenarios.py:sample_operational_events"
+  ],
+  "evaluation_samples_per_client": [
+    "implementation/methods/tempo_fl/data/scenarios.py:sample_operational_evaluation"
+  ],
+  "specialization_all_local_f1_weight": [
+    "implementation/methods/tempo_fl/evaluation/metrics.py:specialization_selection_score"
+  ],
+  "specialization_owned_macro_recall_weight": [
+    "implementation/methods/tempo_fl/evaluation/metrics.py:specialization_selection_score"
+  ],
+  "specialization_owned_accuracy_weight": [
+    "implementation/methods/tempo_fl/evaluation/metrics.py:specialization_selection_score"
+  ],
+  "specialization_background_fraction": [
+    "implementation/methods/tempo_fl/evaluation/metrics.py:make_specialization_training_df"
+  ],
+  "bootstrap_quality_floor": [
+    "implementation/methods/tempo_fl/evaluation/metrics.py:client_owned_quality_weight",
+    "implementation/methods/tempo_fl/training/bootstrap_hierarchy.py:bootstrap_hierarchy"
+  ],
+  "project_root": [
+    "implementation/execution/experiment.py:__init__"
+  ],
+  "num_rounds": [
+    "implementation/execution/experiment.py:run",
+    "implementation/methods/ditto/training/rounds.py:run_round",
+    "implementation/methods/flat/training/rounds.py:run_round",
+    "implementation/methods/hfl/training/rounds.py:run_round",
+    "implementation/methods/tempo_fl/training/rounds.py:run_round",
+    "implementation/methods/ditto/reporting/deployment.py:write_deployment_exports",
+    "implementation/methods/flat/reporting/deployment.py:write_deployment_exports",
+    "implementation/methods/hfl/reporting/deployment.py:write_deployment_exports",
+    "implementation/methods/tempo_fl/reporting/deployment.py:write_deployment_exports",
+    "implementation/methods/ditto/reporting/final.py:write_final_report",
+    "implementation/methods/flat/reporting/final.py:write_final_report",
+    "implementation/methods/hfl/reporting/final.py:write_final_report",
+    "implementation/methods/tempo_fl/reporting/final.py:write_final_report",
+    "implementation/shared/reporting/results.py:publish"
+  ],
+  "l3_threshold_clip_min": [
+    "implementation/methods/tempo_fl/inference/calibration.py:threshold_floor_for_level"
+  ],
+  "l1_threshold_clip_min": [
+    "implementation/methods/tempo_fl/inference/calibration.py:threshold_floor_for_level"
+  ],
+  "l2_threshold_clip_min": [
+    "implementation/methods/tempo_fl/inference/calibration.py:threshold_floor_for_level"
+  ],
+  "target_selective_accuracy": [
+    "implementation/methods/tempo_fl/inference/calibration.py:derive_accept_threshold"
+  ],
+  "min_accept_coverage": [
+    "implementation/methods/tempo_fl/inference/calibration.py:derive_accept_threshold"
+  ],
+  "threshold_grid_step": [
+    "implementation/methods/tempo_fl/inference/calibration.py:derive_accept_threshold"
+  ],
+  "target_selective_lower_bound": [
+    "implementation/methods/tempo_fl/inference/calibration.py:derive_accept_threshold"
+  ],
+  "threshold_grid_min": [
+    "implementation/methods/tempo_fl/inference/calibration.py:derive_accept_threshold"
+  ],
+  "threshold_grid_max": [
+    "implementation/methods/tempo_fl/inference/calibration.py:derive_accept_threshold"
+  ],
+  "threshold_clip_max": [
+    "implementation/methods/tempo_fl/inference/calibration.py:derive_accept_threshold"
+  ],
+  "reliability_bin_edges": [
+    "implementation/methods/tempo_fl/inference/calibration.py:fit_reliability_table"
+  ],
+  "reliability_prior_strength": [
+    "implementation/methods/tempo_fl/inference/calibration.py:fit_reliability_table"
+  ],
+  "context_names": [
+    "implementation/methods/tempo_fl/inference/calibration.py:refresh_reliability_models",
+    "implementation/methods/tempo_fl/inference/calibration.py:refresh_all_gates",
+    "implementation/methods/hfl/training/rounds.py:run_round",
+    "implementation/methods/tempo_fl/training/rounds.py:run_round",
+    "implementation/methods/tempo_fl/runtime/state.py:fresh_runtime_state__tempo",
+    "implementation/methods/hfl/reporting/deployment.py:write_deployment_exports",
+    "implementation/methods/tempo_fl/reporting/deployment.py:write_deployment_exports",
+    "implementation/methods/hfl/reporting/final.py:write_final_report",
+    "implementation/methods/tempo_fl/reporting/final.py:write_final_report",
+    "implementation/methods/tempo_fl/reporting/history.py:write_history_figures",
+    "implementation/methods/tempo_fl/training/bootstrap_hierarchy.py:bootstrap_hierarchy",
+    "implementation/methods/hfl/training/bootstrap_models.py:bootstrap_models"
+  ],
+  "teacher_threshold_min": [
+    "implementation/methods/tempo_fl/inference/routing.py:adaptive_teacher_threshold"
+  ],
+  "teacher_threshold_max": [
+    "implementation/methods/tempo_fl/inference/routing.py:adaptive_teacher_threshold"
+  ],
+  "teacher_confidence_margin": [
+    "implementation/methods/tempo_fl/inference/routing.py:adaptive_teacher_threshold"
+  ],
+  "ditto_lambda": [
+    "implementation/methods/ditto/training/rounds.py:run_round",
+    "implementation/methods/ditto/training/local.py:train_ditto_client"
+  ],
+  "count_l2_to_l3_communication": [
+    "implementation/methods/tempo_fl/training/rounds.py:run_round"
+  ],
+  "l3_blend_candidates": [
+    "implementation/methods/tempo_fl/training/rounds.py:run_round"
+  ],
+  "l3_exploration_score_drop": [
+    "implementation/methods/tempo_fl/training/rounds.py:run_round"
+  ],
+  "l3_hard_score_drop": [
+    "implementation/methods/tempo_fl/training/rounds.py:run_round"
+  ],
+  "l3_min_improvement": [
+    "implementation/methods/tempo_fl/training/rounds.py:run_round"
+  ],
+  "count_l3_to_l2_communication": [
+    "implementation/methods/tempo_fl/training/rounds.py:run_round"
+  ],
+  "l2_blend_candidates": [
+    "implementation/methods/tempo_fl/training/rounds.py:run_round"
+  ],
+  "l2_exploration_score_drop": [
+    "implementation/methods/tempo_fl/training/rounds.py:run_round"
+  ],
+  "l2_hard_score_drop": [
+    "implementation/methods/tempo_fl/training/rounds.py:run_round"
+  ],
+  "l2_min_improvement": [
+    "implementation/methods/tempo_fl/training/rounds.py:run_round"
+  ],
+  "l3_context_quality_power": [
+    "implementation/methods/tempo_fl/training/rounds.py:run_round"
+  ],
+  "l3_rollback_score_drop": [
+    "implementation/methods/tempo_fl/training/rounds.py:run_round"
+  ],
+  "commissioning_rounds": [
+    "implementation/methods/tempo_fl/training/rounds.py:run_round",
+    "implementation/methods/tempo_fl/training/promotion.py:maybe_promote_l1"
+  ],
+  "persistent_profile_refresh_round": [
+    "implementation/methods/tempo_fl/training/rounds.py:run_round"
+  ],
+  "l2_rollback_score_drop": [
+    "implementation/methods/tempo_fl/training/rounds.py:run_round"
+  ],
+  "max_teacher_buffer": [
+    "implementation/methods/tempo_fl/runtime/state.py:fresh_runtime_state__tempo"
+  ],
+  "persistence_rounds": [
+    "implementation/methods/tempo_fl/runtime/state.py:fresh_runtime_state__tempo",
+    "implementation/methods/tempo_fl/training/promotion.py:maybe_promote_l1"
+  ],
+  "mobilenet_alpha": [
+    "implementation/shared/models/mobilenet.py:build_tempo_model"
+  ],
+  "dropout": [
+    "implementation/shared/models/mobilenet.py:build_tempo_model"
+  ],
+  "trainable_tail_layers": [
+    "implementation/shared/models/mobilenet.py:build_tempo_model",
+    "implementation/methods/ditto/training/prepare_generic.py:prepare_generic",
+    "implementation/methods/flat/training/prepare_generic.py:prepare_generic",
+    "implementation/methods/hfl/training/prepare_generic.py:prepare_generic",
+    "implementation/methods/tempo_fl/training/prepare_generic.py:prepare_generic"
+  ],
+  "gradient_clip_norm": [
+    "implementation/shared/models/mobilenet.py:compile_for_fit",
+    "implementation/methods/tempo_fl/training/local.py:local_gradient_step",
+    "implementation/methods/ditto/training/local.py:local_gradient_step_ditto",
+    "implementation/shared/training/local.py:local_gradient_step_fedavg",
+    "implementation/methods/tempo_fl/training/promotion.py:train_promotion_candidate"
+  ],
+  "dataset_name": [
+    "implementation/methods/ditto/reporting/dataset.py:report_dataset",
+    "implementation/methods/flat/reporting/dataset.py:report_dataset",
+    "implementation/methods/hfl/reporting/dataset.py:report_dataset",
+    "implementation/methods/tempo_fl/reporting/dataset.py:report_dataset"
+  ],
+  "export_tflite_at_end": [
+    "implementation/methods/ditto/reporting/deployment.py:write_deployment_exports",
+    "implementation/methods/flat/reporting/deployment.py:write_deployment_exports",
+    "implementation/methods/hfl/reporting/deployment.py:write_deployment_exports",
+    "implementation/methods/tempo_fl/reporting/deployment.py:write_deployment_exports"
+  ],
+  "num_clients": [
+    "implementation/methods/ditto/reporting/partitions.py:report_client_partitions",
+    "implementation/methods/flat/reporting/partitions.py:report_client_partitions",
+    "implementation/methods/hfl/reporting/partitions.py:report_client_partitions",
+    "implementation/methods/tempo_fl/reporting/partitions.py:report_client_partitions"
+  ],
+  "tflite_representative_samples": [
+    "implementation/shared/reporting/tflite.py:representative_dataset_generator"
+  ],
+  "prefer_full_int8_tflite": [
+    "implementation/shared/reporting/tflite.py:export_tflite_model"
+  ],
+  "gate_score_calibration_weight": [
+    "implementation/methods/tempo_fl/training/aggregation.py:model_gate_score"
+  ],
+  "gate_score_nll_quality_weight": [
+    "implementation/methods/tempo_fl/training/aggregation.py:model_gate_score"
+  ],
+  "gate_score_balanced_accuracy_weight": [
+    "implementation/methods/tempo_fl/training/aggregation.py:model_gate_score"
+  ],
+  "gate_score_f1_weight": [
+    "implementation/methods/tempo_fl/training/aggregation.py:model_gate_score"
+  ],
+  "gate_score_accuracy_weight": [
+    "implementation/methods/tempo_fl/training/aggregation.py:model_gate_score"
+  ],
+  "gate_base_supported_class_recall_drop": [
+    "implementation/methods/tempo_fl/training/aggregation.py:recall_retention_is_safe"
+  ],
+  "gate_max_adaptive_class_recall_drop": [
+    "implementation/methods/tempo_fl/training/aggregation.py:recall_retention_is_safe"
+  ],
+  "gate_max_ece_increase": [
+    "implementation/methods/tempo_fl/training/aggregation.py:select_trust_region_blend",
+    "implementation/methods/tempo_fl/training/aggregation.py:safe_topdown_l3_to_l2"
+  ],
+  "trust_region_preferred_exploration_alpha": [
+    "implementation/methods/tempo_fl/training/aggregation.py:select_trust_region_blend"
+  ],
+  "topdown_l3_to_l2_candidates": [
+    "implementation/methods/tempo_fl/training/aggregation.py:safe_topdown_l3_to_l2"
+  ],
+  "bootstrap_use_owned_quality_weights": [
+    "implementation/methods/tempo_fl/training/bootstrap_hierarchy.py:bootstrap_hierarchy"
+  ],
+  "bootstrap_l3_context_quality_power": [
+    "implementation/methods/tempo_fl/training/bootstrap_hierarchy.py:bootstrap_hierarchy"
+  ],
+  "generic_use_class_weights": [
+    "implementation/shared/training/generic_support.py:generic_class_weights"
+  ],
+  "generic_class_weight_min": [
+    "implementation/shared/training/generic_support.py:generic_class_weights"
+  ],
+  "generic_class_weight_max": [
+    "implementation/shared/training/generic_support.py:generic_class_weights"
+  ],
+  "l2_local_steps_per_round": [
+    "implementation/methods/tempo_fl/training/local.py:train_l2_shadow"
+  ],
+  "l2_class_balanced_batches": [
+    "implementation/methods/tempo_fl/training/local.py:train_l2_shadow"
+  ],
+  "l2_shadow_lr": [
+    "implementation/methods/tempo_fl/training/local.py:train_l2_shadow"
+  ],
+  "l2_shadow_batch_size": [
+    "implementation/methods/tempo_fl/training/local.py:train_l2_shadow"
+  ],
+  "l2_prox_mu": [
+    "implementation/methods/tempo_fl/training/local.py:train_l2_shadow"
+  ],
+  "ditto_local_steps_per_round": [
+    "implementation/methods/ditto/training/local.py:train_ditto_client"
+  ],
+  "ditto_class_balanced_batches": [
+    "implementation/methods/ditto/training/local.py:train_ditto_client"
+  ],
+  "ditto_global_lr": [
+    "implementation/methods/ditto/training/local.py:train_ditto_client"
+  ],
+  "ditto_personal_lr": [
+    "implementation/methods/ditto/training/local.py:train_ditto_client"
+  ],
+  "ditto_batch_size": [
+    "implementation/methods/ditto/training/local.py:train_ditto_client"
+  ],
+  "fedavg_local_steps_per_round": [
+    "implementation/shared/training/local.py:train_fedavg_client"
+  ],
+  "fedavg_class_balanced_batches": [
+    "implementation/shared/training/local.py:train_fedavg_client"
+  ],
+  "fedavg_local_lr": [
+    "implementation/shared/training/local.py:train_fedavg_client"
+  ],
+  "fedavg_local_batch_size": [
+    "implementation/shared/training/local.py:train_fedavg_client"
+  ],
+  "generic_lr_head": [
+    "implementation/methods/ditto/training/prepare_generic.py:prepare_generic",
+    "implementation/methods/flat/training/prepare_generic.py:prepare_generic",
+    "implementation/methods/hfl/training/prepare_generic.py:prepare_generic",
+    "implementation/methods/tempo_fl/training/prepare_generic.py:prepare_generic"
+  ],
+  "generic_lr_finetune": [
+    "implementation/methods/ditto/training/prepare_generic.py:prepare_generic",
+    "implementation/methods/flat/training/prepare_generic.py:prepare_generic",
+    "implementation/methods/hfl/training/prepare_generic.py:prepare_generic",
+    "implementation/methods/tempo_fl/training/prepare_generic.py:prepare_generic"
+  ],
+  "generic_batch_size": [
+    "implementation/methods/ditto/training/prepare_generic.py:prepare_generic",
+    "implementation/methods/flat/training/prepare_generic.py:prepare_generic",
+    "implementation/methods/hfl/training/prepare_generic.py:prepare_generic",
+    "implementation/methods/tempo_fl/training/prepare_generic.py:prepare_generic"
+  ],
+  "generic_head_epochs": [
+    "implementation/methods/ditto/training/prepare_generic.py:prepare_generic",
+    "implementation/methods/flat/training/prepare_generic.py:prepare_generic",
+    "implementation/methods/hfl/training/prepare_generic.py:prepare_generic",
+    "implementation/methods/tempo_fl/training/prepare_generic.py:prepare_generic"
+  ],
+  "generic_finetune_epochs": [
+    "implementation/methods/ditto/training/prepare_generic.py:prepare_generic",
+    "implementation/methods/flat/training/prepare_generic.py:prepare_generic",
+    "implementation/methods/hfl/training/prepare_generic.py:prepare_generic",
+    "implementation/methods/tempo_fl/training/prepare_generic.py:prepare_generic"
+  ],
+  "early_stopping_patience": [
+    "implementation/methods/ditto/training/prepare_generic.py:prepare_generic",
+    "implementation/methods/flat/training/prepare_generic.py:prepare_generic",
+    "implementation/methods/hfl/training/prepare_generic.py:prepare_generic",
+    "implementation/methods/tempo_fl/training/prepare_generic.py:prepare_generic"
+  ],
+  "reduce_lr_patience": [
+    "implementation/methods/ditto/training/prepare_generic.py:prepare_generic",
+    "implementation/methods/flat/training/prepare_generic.py:prepare_generic",
+    "implementation/methods/hfl/training/prepare_generic.py:prepare_generic",
+    "implementation/methods/tempo_fl/training/prepare_generic.py:prepare_generic"
+  ],
+  "reduce_lr_factor": [
+    "implementation/methods/ditto/training/prepare_generic.py:prepare_generic",
+    "implementation/methods/flat/training/prepare_generic.py:prepare_generic",
+    "implementation/methods/hfl/training/prepare_generic.py:prepare_generic",
+    "implementation/methods/tempo_fl/training/prepare_generic.py:prepare_generic"
+  ],
+  "generic_source_project_root": [
+    "implementation/methods/flat/training/prepare_generic.py:prepare_generic"
+  ],
+  "absolute_reliance_floor": [
+    "implementation/methods/tempo_fl/training/promotion.py:required_promotion_reliance"
+  ],
+  "reliance_increase_over_baseline": [
+    "implementation/methods/tempo_fl/training/promotion.py:required_promotion_reliance"
+  ],
+  "promotion_lr": [
+    "implementation/methods/tempo_fl/training/promotion.py:train_promotion_candidate"
+  ],
+  "promotion_kd_temperature": [
+    "implementation/methods/tempo_fl/training/promotion.py:train_promotion_candidate",
+    "implementation/methods/tempo_fl/training/promotion.py:teacher_kl_loss"
+  ],
+  "promotion_epochs": [
+    "implementation/methods/tempo_fl/training/promotion.py:train_promotion_candidate"
+  ],
+  "promotion_kd_lambda": [
+    "implementation/methods/tempo_fl/training/promotion.py:train_promotion_candidate"
+  ],
+  "promotion_accept_cooldown_rounds": [
+    "implementation/methods/tempo_fl/training/promotion.py:maybe_promote_l1"
+  ],
+  "promotion_reject_cooldown_rounds": [
+    "implementation/methods/tempo_fl/training/promotion.py:maybe_promote_l1"
+  ],
+  "min_teacher_samples_for_promotion": [
+    "implementation/methods/tempo_fl/training/promotion.py:maybe_promote_l1"
+  ],
+  "promotion_replay_samples": [
+    "implementation/methods/tempo_fl/training/promotion.py:maybe_promote_l1"
+  ],
+  "promotion_min_teacher_kl_improvement": [
+    "implementation/methods/tempo_fl/training/promotion.py:maybe_promote_l1"
+  ],
+  "promotion_min_acceptance_gain": [
+    "implementation/methods/tempo_fl/training/promotion.py:maybe_promote_l1"
+  ],
+  "promotion_rebaseline_rounds": [
+    "implementation/methods/tempo_fl/training/promotion.py:maybe_promote_l1"
+  ],
+  "promotion_min_escalated_events_window": [
+    "implementation/methods/tempo_fl/training/promotion.py:maybe_promote_l1"
+  ],
+  "higher_resolution_threshold": [
+    "implementation/methods/tempo_fl/training/promotion.py:maybe_promote_l1"
+  ],
+  "promotion_max_owned_accuracy_drop": [
+    "implementation/methods/tempo_fl/training/promotion.py:maybe_promote_l1"
+  ],
+  "promotion_max_owned_macro_recall_drop": [
+    "implementation/methods/tempo_fl/training/promotion.py:maybe_promote_l1"
+  ],
+  "promotion_base_supported_class_recall_drop": [
+    "implementation/methods/tempo_fl/training/promotion.py:maybe_promote_l1"
+  ],
+  "promotion_max_adaptive_class_recall_drop": [
+    "implementation/methods/tempo_fl/training/promotion.py:maybe_promote_l1"
+  ],
+  "teacher_memory_rounds": [
+    "implementation/methods/tempo_fl/training/promotion.py:maybe_promote_l1"
+  ],
+  "promotion_max_owned_min_recall_drop": [
+    "implementation/methods/tempo_fl/training/promotion.py:maybe_promote_l1"
+  ],
+  "promotion_max_local_f1_drop": [
+    "implementation/methods/tempo_fl/training/promotion.py:maybe_promote_l1"
+  ],
+  "promotion_max_local_accuracy_drop": [
+    "implementation/methods/tempo_fl/training/promotion.py:maybe_promote_l1"
+  ],
+  "evaluation_every": [
+    "implementation/shared/training/schedule.py:is_evaluation_round"
+  ],
+  "specialization_initial_lr": [
+    "implementation/methods/tempo_fl/training/specialize_clients.py:specialize_clients"
+  ],
+  "specialization_max_epochs": [
+    "implementation/methods/tempo_fl/training/specialize_clients.py:specialize_clients"
+  ],
+  "specialization_min_epochs": [
+    "implementation/methods/tempo_fl/training/specialize_clients.py:specialize_clients"
+  ],
+  "specialization_print_per_epoch": [
+    "implementation/methods/tempo_fl/training/specialize_clients.py:specialize_clients"
+  ],
+  "specialization_batch_size": [
+    "implementation/methods/tempo_fl/training/specialize_clients.py:specialize_clients"
+  ],
+  "specialization_print_per_class_each_epoch": [
+    "implementation/methods/tempo_fl/training/specialize_clients.py:specialize_clients"
+  ],
+  "specialization_stop_when_target_met": [
+    "implementation/methods/tempo_fl/training/specialize_clients.py:specialize_clients"
+  ],
+  "specialization_lr_patience": [
+    "implementation/methods/tempo_fl/training/specialize_clients.py:specialize_clients"
+  ],
+  "specialization_min_lr": [
+    "implementation/methods/tempo_fl/training/specialize_clients.py:specialize_clients"
+  ],
+  "specialization_target_owned_accuracy": [
+    "implementation/methods/tempo_fl/training/specialize_clients.py:specialize_clients"
+  ],
+  "specialization_target_owned_macro_recall": [
+    "implementation/methods/tempo_fl/training/specialize_clients.py:specialize_clients"
+  ],
+  "specialization_early_stop_patience": [
+    "implementation/methods/tempo_fl/training/specialize_clients.py:specialize_clients"
+  ],
+  "specialization_max_owned_min_recall_drop": [
+    "implementation/methods/tempo_fl/training/specialize_clients.py:specialize_clients"
+  ],
+  "specialization_min_score_delta": [
+    "implementation/methods/tempo_fl/training/specialize_clients.py:specialize_clients"
+  ],
+  "specialization_lr_reduce_factor": [
+    "implementation/methods/tempo_fl/training/specialize_clients.py:specialize_clients"
+  ]
+}

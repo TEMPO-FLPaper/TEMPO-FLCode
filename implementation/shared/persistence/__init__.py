@@ -1,0 +1,1 @@
+"""shared.persistence package."""

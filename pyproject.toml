@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tempo-fl"
+version = "0.1.0"
+description = "Reference research protocols and terminal workbench for TEMPO-FL on TrashNet"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dynamic = ["dependencies"]
+
+[project.optional-dependencies]
+dev = ["pytest==8.3.5", "ruff==0.11.5", "build==1.2.2.post1", "PyMuPDF==1.25.5"]
+
+[project.scripts]
+tempo-fl = "implementation.__main__:main"
+tempo-fl-run = "implementation.execution.worker:main"
+
+[tool.setuptools.packages.find]
+include = ["implementation*"]
+
+[tool.setuptools.package-data]
+implementation = ["config/*.json", "config/*/*.json", "config/README.md"]
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirement.txt"]}
+
+[tool.setuptools.data-files]
+"share/tempo-fl" = ["TEMPO_FL.pdf"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra -p no:cacheprovider"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+[tool.ruff.lint]
+select = ["F821", "F822", "F823"]
